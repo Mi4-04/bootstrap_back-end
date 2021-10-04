@@ -32,7 +32,7 @@ export class AuthController {
     @Body(ValidationPipe) userLoginDto: UserLoginDto,
   ): Promise<LoginInfoDto> {
     return this.authService.login(userLoginDto);
-  }
+  } 
 
   @Get('/token')
   @UseGuards(AuthGuard())
