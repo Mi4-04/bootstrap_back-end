@@ -43,4 +43,9 @@ export class AuthController {
   getAccountData(@GetAccount() user: UserEntity): Promise<AccountDataDto> {
     return this.authService.getAccountInfo(user);
   }
+
+  @Get('/home')
+  getFindAll(){
+  return this.authService.getFindAll()
+  }
 }
