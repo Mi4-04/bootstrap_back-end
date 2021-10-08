@@ -69,4 +69,9 @@ export class AuthService {
 
     return accountData;
   }
+
+  async getFindAll(): Promise<UserEntity[]> {
+    const users = await this.AuthRepository.find();
+    return users;
+  }
 }

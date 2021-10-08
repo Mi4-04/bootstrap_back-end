@@ -32,7 +32,7 @@ export class AuthController {
     @Body(ValidationPipe) userLoginDto: UserLoginDto,
   ): Promise<LoginInfoDto> {
     return this.authService.login(userLoginDto);
-  }
+  } 
 
   @Get('/token')
   @UseGuards(AuthGuard())
@@ -42,5 +42,10 @@ export class AuthController {
   @UseGuards(AuthGuard(), AccountGuard)
   getAccountData(@GetAccount() user: UserEntity): Promise<AccountDataDto> {
     return this.authService.getAccountInfo(user);
+  }
+
+  @Get('/home')
+  getFindAll(){
+  return this.authService.getFindAll()
   }
 }
